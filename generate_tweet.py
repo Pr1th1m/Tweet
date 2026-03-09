@@ -146,7 +146,7 @@ def main():
     send_email(
         subject="Your Weekly Auto-Generated Tweet",
         body=generated_tweet,
-        to_email='22002171310020@ljku.edu.in'
+        to_email='karmatechnolabs@gmail.com'
     )
 
 
