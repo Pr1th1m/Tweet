@@ -119,9 +119,9 @@ def main():
     news_data = webSearch(query)
     print(news_data)
     
-    sys_prompt = "You are an expert investigative journalist and social media analyst. Your goal is to extract the most critical, factual details from a list of news stories and craft a high-impact, information-dense tweet. Avoid vague generalizations; include specific names, locations, and numbers where possible. Focus on 'Why this matters now'. "
+    sys_prompt = "You are an expert investigative journalist and social media analyst. Your goal is to extract the most critical, factual details from a list of news stories and craft a high-impact, information-dense tweet. Avoid vague generalizations; include specific names, locations, and numbers where possible. Focus on 'Why this matters now'. The tweet must be 280 characters(including spaces)."
     
-    user_prompt = f"Here is the detailed news data from the past 2 days:\n\n{news_data}\n\nTask: Based on these facts, generate the most informative and detailed tweet possible. Prioritize specific breakthroughs, conflict developments, or economic figures. Make it 'news-first', not just hype."
+    user_prompt = f"Here is the detailed news data from the past 2 days:\n\n{news_data}\n\nTask: Based on these facts, generate one informative tweet that is strictly 280 characters(including spaces). Prioritize specific breakthroughs, conflict developments, or economic figures. Make it news-first, not hype."
 
     completion = client.chat.completions.create(
         temperature = 0.7,
@@ -146,9 +146,16 @@ def main():
     send_email(
         subject="Your Weekly Auto-Generated Tweet",
         body=generated_tweet,
-        to_email='karmatechnolabs@gmail.com'
+        to_emails=[
+            "prathamdhanvade25@gmail.com",
+            "pratham.karmatechnolabs@gmail.com"
+        ]
     )
 
 
 if __name__ == '__main__':
     main()
+
+
+
+
