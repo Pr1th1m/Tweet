@@ -254,7 +254,8 @@ def main():
         subject='Your Weekly Auto-Generated Tweet',
         body=generated_tweet,
         to_emails=[
-            'prathamdhanvade25@gmail.com'
+            'prathamdhanvade25@gmail.com',
+            'karmatechnolabs@gmail.com'
         ]
     )
 
